@@ -51,6 +51,7 @@ Allure reports are generated automatically after running the tests. You can view
 
 2. **`runEmulator`**:
    - **Command**: `nohup /path/to/Library/Android/sdk/emulator/emulator -avd Pixel_8_Pro_API_VanillaIceCream &`
+   - ** Also change the emulator name or add the real device as per use.
    - **Purpose**: Starts the Android emulator in the background.
    - **Customization**: Replace the path with your Android SDK emulator path.
 
