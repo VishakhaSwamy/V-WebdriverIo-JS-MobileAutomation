@@ -1,10 +1,10 @@
 {
-  "name": "VishakhaAppium",
-  "description": "Appium tests using WebdriverIO",
+  "name": "Vishakha WebdriverIO",
+  "description": "Mobile Automation tests using WebdriverIO",
   "main": "index.js",
   "scripts": {
-    "demoAppLogin": "npx wdio wdio.conf.js && allure generate allure-results --clean",
-    "runEmulator": "nohup /path/to/Library/Android/sdk/emulator/emulator -avd Pixel_8_Pro_API_VanillaIceCream &",
+    "demoAppLogin": "rm -rf allure-results && npx wdio wdio.conf.js && allure generate allure-results --clean",
+    "runEmulator": "nohup /Users/vishakhaswamy/Library/Android/sdk/emulator/emulator -avd Pixel_8_Pro_API_VanillaIceCream &",
     "startEmulatorAndRunTests": "npm run runEmulator && sleep 30 && ./wait-for-emulator.sh && npm run demoAppLogin && adb -s emulator-5554 emu kill"
   },
   "keywords": [
