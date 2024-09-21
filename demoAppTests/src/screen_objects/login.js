@@ -5,9 +5,7 @@ class login {
     get LoginButton() { return $('~Login button'); }
 
     //getText validation
-    get genericError(){return $('//android.view.ViewGroup[@content-desc="generic-error-message"]/android.widget.TextView')};
-    get usernameError(){return $('//android.view.ViewGroup[@content-desc="Username-error-message"]/android.widget.TextView')};
-    get passwordError(){return $('//android.view.ViewGroup[@content-desc="Password-error-message"]/android.widget.TextView')};
+    get errorMessage() {return $("//android.view.ViewGroup[contains(@content-desc, '-error-message')]/android.widget.TextView")};
     get productPage() { return $('//android.view.ViewGroup[@content-desc="container header"]/android.widget.TextView')}; 
 
     
