@@ -1,26 +1,14 @@
 Feature: Login Functionality
 
-  Scenario: Login with Locked creds
+ Scenario Outline: Login with "<ScenarioName>"
     Given I am on app login Page
-    When I login with "alice@example.com" and "10203040"
-    Then I see locked error message
+    When I login with "<Username>" and "<Password>"
+    Then I see "<ExpectedText>" on the page after clicking Login button
 
-  Scenario: Login with No_Match creds
-    Given I am on app login Page
-    When I login with "1@2.com" and "f-o-o"
-    Then I see do not match error message
-
-   Scenario: Login with No_Usename invalid creds
-    Given I am on app login Page
-    When I login with "" and ""
-    Then I see username required error message
-
- Scenario: Login with No_Password creds
-    Given I am on app login Page
-    When I login with "bob@example.com" and ""
-    Then I see password required error message
-
-  Scenario: Login with valid creds
-      Given I am on app login Page
-      When I login with "bob@example.com" and "10203040"
-      Then I see products page
+  Examples:
+  | ScenarioName    | Username          | Password | ExpectedText                                                |
+  | LOCKED          | alice@example.com | 10203040 | Sorry, this user has been locked out.                       |
+  | NO_MATCH        | 1@2.com           | f-o-o    | Provided credentials do not match any user in this service. |
+  | NO_USER_DETAILS |                   |          | Username is required                                        |
+  | NO_PASSWORD     | bob@example.com   |          | Password is required                                        |
+  | STANDARD        | bob@example.com   | 10203040 | Products                                                    |
